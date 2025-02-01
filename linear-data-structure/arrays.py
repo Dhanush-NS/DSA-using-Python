@@ -74,3 +74,9 @@ def array_dup():
             dup.append(i)
     return dup
 print(array_dup())
+
+a=1,4,3,2
+def reverse_array():
+    a1= a[::-1]
+    return a1
+print(reverse_array())
