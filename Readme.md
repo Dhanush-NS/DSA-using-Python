@@ -1,1 +1,1 @@
-This contains implementation of DSA using Python
+This Repository contains implementation of DSA using Python
