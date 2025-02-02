@@ -37,9 +37,7 @@ class Stack:
             print(f"top element",self.stack[-1])
     def is_empty(self):
         return len(self.stack) == 0
-    def is_full(self):
-        if self.is_full():
-            print("stack is full")
+    
 
     def display(self):
         """Print all elements of the stack."""
@@ -57,5 +55,5 @@ print(s.pop())
 s.display()
 s.peek()
 s.display()
-s.is_full()
+print(s.is_empty())
 
