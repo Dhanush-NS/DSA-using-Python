@@ -17,31 +17,45 @@ class Stack:
     def __init__(self,size):
         self.size = size
         self.stack = []
-    def push(self,*item):
-        if len(self.stack) < self.size:
+    def push(self,item):
+        if len(self.stack) < self.size :
             self.stack.append(item)
-            print(f"pushed {item} into the stack")
+            print(f"{item} is pushed into the stack")
         else:
             print("stack is overflow")
     def pop(self):
-        #remove and return the top elemant 
+        #pop and return the item
         if not self.is_empty():
-            return self.stack.pop()
+            print(self.stack.pop())
         else:
             print("stack is underflow")
             return None
     def peek(self):
-        if not self.is_empty():
-            return self.stack[-1]
-    def is_empty(self):
-        return len(self.stack) == 0
-    def display(self):
         if self.is_empty():
             print("stack is empty")
         else:
-            print("elements in the stack",self.stack[::-1])
+            print(f"top element",self.stack[-1])
+    def is_empty(self):
+        return len(self.stack) == 0
+    def is_full(self):
+        if self.is_full():
+            print("stack is full")
+
+    def display(self):
+        """Print all elements of the stack."""
+        if self.is_empty():
+            print("Stack is empty.")
+        else:
+            print("Stack elements (top to bottom):", self.stack[::])
 s = Stack(10)
-s.push(110,232,23,3)
-print(s.pop())
-print(s.peek())
+s.push(1)
+s.push(10)
+s.push(100)
+s.push(1000)
 s.display()
+print(s.pop())
+s.display()
+s.peek()
+s.display()
+s.is_full()
+
