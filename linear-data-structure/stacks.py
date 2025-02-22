@@ -13,47 +13,61 @@
 
 # Static stack
 
+
 class Stack:
     def __init__(self,size):
-        self.size = size
+        # if size <= 0:
+        #     raise ValueError("stack size must be greater than 0")
         self.stack = []
-    def push(self,item):
-        if len(self.stack) < self.size :
-            self.stack.append(item)
-            print(f"{item} is pushed into the stack")
-        else:
-            print("stack is overflow")
-    def pop(self):
-        #pop and return the item
-        if not self.is_empty():
-            print(self.stack.pop())
-        else:
-            print("stack is underflow")
-            return None
-    def peek(self):
-        if self.is_empty():
-            print("stack is empty")
-        else:
-            print(f"top element",self.stack[-1])
-    def is_empty(self):
+        self.size = size
+    def isempty(self):
         return len(self.stack) == 0
-    
-
-    def display(self):
-        """Print all elements of the stack."""
-        if self.is_empty():
-            print("Stack is empty.")
+            
+        
+    def isfull(self):
+        return len(self.stack) == self.size
+            
+    def push(self,value):
+        if self.isfull():
+            raise ValueError("stack overflow")
         else:
-            print("Stack elements (top to bottom):", self.stack[::])
-s = Stack(10)
-s.push(1)
-s.push(10)
-s.push(100)
-s.push(1000)
-s.display()
-print(s.pop())
-s.display()
-s.peek()
-s.display()
-print(s.is_empty())
+            self.stack.append(value)
+            print(f"Value {value} pushed into the stack")
+    def pop(self):
+        if self.isempty():
+            raise ValueError("stack is empty")
+        else:
+            self.stack.pop()
+            # print(f"value is removed")
+    def display(self):
+        if self.stack == 0:
+            return "Stack is empty"
+        return self.stack[::-1]
+    def peek(self):
+        return self.stack[-1]
+    def reverse_str(self):
+        string = "Dhanush"
+        rev = ""
+        for i in string:
+            rev = i+rev
+            
+        return rev
+try:
+    s1 = Stack(10)
+    print(s1.isempty())
+    print(s1.isfull())
+    s1.push(1)
+    s1.push(2)
+    s1.push(3)
+    s1.push(4)
+    s1.pop()
+    print(s1.display())
+    print(s1.peek())
+    print(s1.reverse_str())
+    
+except ValueError as e:
+    print("Error : ",e)
+
+
+
 

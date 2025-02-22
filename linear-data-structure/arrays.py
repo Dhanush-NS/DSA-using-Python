@@ -78,3 +78,11 @@ def reverse_array():
     a1= a[::-1]
     return a1
 print(reverse_array())
+
+# find the max num in array and what is its time complexity
+def max_arr(n):
+    return max(n)
+
+arr = [1,2,3,4]
+
+print(max_arr(arr))
