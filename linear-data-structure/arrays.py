@@ -63,8 +63,6 @@ def sort_arr():
     return combined
 print(sort_arr()) 
 
-
-
 #Remove duplicates in the array
 a = [1,2,2,4,5,3,3,5,6,7,2,1]
 def array_dup():
